@@ -1,0 +1,29 @@
+{
+  "name": "src-n-parse",
+  "version": "0.1.0",
+  "description": "Parse src-n-attribute",
+  "main": "index",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robinpokorny/src-n-parse.git"
+  },
+  "keywords": [
+    "src-n",
+    "parser",
+    "responsive",
+    "image"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "author": "Robin Pokorný <robin@medvedi.eu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robinpokorny/src-n-parse/issues"
+  },
+  "homepage": "https://github.com/robinpokorny/src-n-parse"
+}

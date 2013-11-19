@@ -1,0 +1,10 @@
+{
+  "type": "src-n-attribute",
+  "media-query": "(max-width: 400px)",
+  "x-based-urls": [
+    {
+      "url": "pic.jpg",
+      "resolution": "1x"
+    }
+  ]
+}
