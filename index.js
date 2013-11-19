@@ -1,7 +1,8 @@
-module.exports = function(value, options) {
+module.exports = function (value, options) {
+    'use strict';
     options = options || {};
 
-    function srcNAttribute () {
+    function srcNAttribute() {
         return {
             type: 'src-n-attribute'
         };
