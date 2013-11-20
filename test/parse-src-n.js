@@ -19,6 +19,7 @@ describe('parse(srt)', function(){
       var json = read(path.join('test', 'expected', test.name + '.json'), 'utf8');
       var ret = parse(test.value);
       ret = JSON.stringify(ret, null, 2);
+      fs.writeFileSync(path.join('test', 'out', test.name + '.json'), ret);
       ret.should.equal(json);
     })
   });

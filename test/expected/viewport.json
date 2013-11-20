@@ -1,6 +1,7 @@
 {
   "type": "src-n-attribute",
   "media-query": null,
+  "x-based-urls": null,
   "viewport-urls": {
     "size-viewport-list": [
       {
