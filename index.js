@@ -1,19 +1,18 @@
-module.exports = function (value, options) {
+module.exports = function (value) {
   'use strict';
-  options = options || {};
+  /*jslint node: true, regexp: true, indent: 2 */
 
-  function srcNAttribute() {
-    return {
-      'type': 'src-n-attribute',
-      'media-query': mediaQuery(),
-      'x-based-urls': xBasedUrls(),
-      'viewport-urls': viewportUrls()
-    };
+   /**
+   * Trim `str`.
+   */
+
+  function trim(str) {
+    return str ? str.replace(/^\s+|\s+$/g, '') : '';
   }
 
   function mediaQuery() {
     var re = /^\s*(\(.*\))\s*(.*)/i,
-        m = value.match(re);
+      m = value.match(re);
 
     if (!m) {
       return null;
@@ -25,14 +24,14 @@ module.exports = function (value, options) {
 
   function xBasedUrls() {
     var m, urls = [],
-        single = /\s*((?:\w+\.)+\w+)(?:\s+((?:\d*\.)?\d+x))?\s*/,
-        re = new RegExp('^' + single.source + '(,' + single.source + ')*');
+      single = /\s*((?:\w+\.)+\w+)(?:\s+((?:\d*\.)?\d+x))?\s*/,
+      re = new RegExp('^' + single.source + '(,' + single.source + ')*');
 
     if (!value.match(re)) {
       return null;
     }
 
-    value.split(',').forEach(function(url) {
+    value.split(',').forEach(function (url) {
       m = url.match(single);
       url = {
         'url': m[1]
@@ -47,14 +46,9 @@ module.exports = function (value, options) {
   }
 
   function viewportUrls() {
-    var m, i, item, list = [],
-        urls = [],
-        imageSizeRe = /\s*((?:\d*\.)?\d+(?:[a-z]{2,4}|%))\s*/i,
-        viewportSizeRe = /\s*\(\s*((?:\d*\.)?\d+[a-z]{2,4})\s*\)\s*/i,
-        sizeBasedUrlRe = /\s*((?:\w+\.)+\w+)\s+(\d+)\s*/,
-        re = new RegExp('^' + imageSizeRe.source + '(?:' + viewportSizeRe.source + imageSizeRe.source +')*;' + sizeBasedUrlRe.source + '(?:,' + sizeBasedUrlRe.source + ')*', 'i');
-
-    re = /\d([a-z]{2,4}|%)[^;]*;(\s*[^\s;]*\s+\d+)+/i;
+    var m, i, len, item, list = [], urls = [],
+      sizeBasedUrlRe = /\s*((?:\w+\.)+\w+)\s+(\d+)\s*/,
+      re = /\d([a-z]{2,4}|%)[^;]*;(\s*[^\s;]*\s+\d+)+/i;
 
     if (!value.match(re)) {
       return null;
@@ -63,20 +57,20 @@ module.exports = function (value, options) {
     value = value.split(';');
 
     m = value[0].split(/(?: \()|(?:\) )/);
-    for (i=0; i < m.length; i++) {
+    for (i = 0, len = m.length; i < len; i += 1) {
       m[i] = trim(m[i]);
       if (i % 2 === 0) {
-          item = {
-              'image-size': m[i]
-          };
+        item = {
+          'image-size': m[i]
+        };
       } else {
-          item['viewport-size'] = m[i];
-          list.push(item);
+        item['viewport-size'] = m[i];
+        list.push(item);
       }
     }
     list.push(item);
 
-    value[1].split(',').forEach(function(url) {
+    value[1].split(',').forEach(function (url) {
       m = url.match(sizeBasedUrlRe);
       url = {
         'url': m[1]
@@ -95,14 +89,14 @@ module.exports = function (value, options) {
     };
   }
 
+  function srcNAttribute() {
+    return {
+      'type': 'src-n-attribute',
+      'media-query': mediaQuery(),
+      'x-based-urls': xBasedUrls(),
+      'viewport-urls': viewportUrls()
+    };
+  }
 
   return srcNAttribute();
 };
-
-/**
- * Trim `str`.
- */
-
-function trim(str) {
-  return str ? str.replace(/^\s+|\s+$/g, '') : '';
-}
