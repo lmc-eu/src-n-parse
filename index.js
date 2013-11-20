@@ -47,14 +47,14 @@ module.exports = function (value, options) {
   }
 
   function viewportUrls() {
-    var m, list = [],
+    var m, i, item, list = [],
         urls = [],
         imageSizeRe = /\s*((?:\d*\.)?\d+(?:[a-z]{2,4}|%))\s*/i,
         viewportSizeRe = /\s*\(\s*((?:\d*\.)?\d+[a-z]{2,4})\s*\)\s*/i,
         sizeBasedUrlRe = /\s*((?:\w+\.)+\w+)\s+(\d+)\s*/,
         re = new RegExp('^' + imageSizeRe.source + '(?:' + viewportSizeRe.source + imageSizeRe.source +')*;' + sizeBasedUrlRe.source + '(?:,' + sizeBasedUrlRe.source + ')*', 'i');
 
-    re = /\d([a-z]{2,4})|%[^;]*;[^;]*/i;
+    re = /\d([a-z]{2,4}|%)[^;]*;(\s*[^\s;]*\s+\d+)+/i;
 
     if (!value.match(re)) {
       return null;
@@ -62,9 +62,19 @@ module.exports = function (value, options) {
 
     value = value.split(';');
 
-    value[0].split(/\(|\)/).forEach(function(url) {
-      list.push(url);
-    });
+    m = value[0].split(/(?: \()|(?:\) )/);
+    for (i=0; i < m.length; i++) {
+      m[i] = trim(m[i]);
+      if (i % 2 === 0) {
+          item = {
+              'image-size': m[i]
+          };
+      } else {
+          item['viewport-size'] = m[i];
+          list.push(item);
+      }
+    }
+    list.push(item);
 
     value[1].split(',').forEach(function(url) {
       m = url.match(sizeBasedUrlRe);
@@ -78,6 +88,7 @@ module.exports = function (value, options) {
     });
 
 
+    value = '';
     return {
       "size-viewport-list": list,
       "size-based-urls": urls
@@ -87,3 +98,11 @@ module.exports = function (value, options) {
 
   return srcNAttribute();
 };
+
+/**
+ * Trim `str`.
+ */
+
+function trim(str) {
+  return str ? str.replace(/^\s+|\s+$/g, '') : '';
+}

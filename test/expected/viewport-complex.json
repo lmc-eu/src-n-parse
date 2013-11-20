@@ -1,0 +1,46 @@
+{
+  "type": "src-n-attribute",
+  "media-query": null,
+  "x-based-urls": null,
+  "viewport-urls": {
+    "size-viewport-list": [
+      {
+        "image-size": "100%",
+        "viewport-size": "30em"
+      },
+      {
+        "image-size": "50%",
+        "viewport-size": "50em"
+      },
+      {
+        "image-size": "calc(33% - 100px)"
+      }
+    ],
+    "size-based-urls": [
+      {
+        "url": "pic100.png",
+        "size": "100"
+      },
+      {
+        "url": "pic200.png",
+        "size": "200"
+      },
+      {
+        "url": "pic400.png",
+        "size": "400"
+      },
+      {
+        "url": "pic800.png",
+        "size": "800"
+      },
+      {
+        "url": "pic1600.png",
+        "size": "1600"
+      },
+      {
+        "url": "pic3200.png",
+        "size": "3200"
+      }
+    ]
+  }
+}

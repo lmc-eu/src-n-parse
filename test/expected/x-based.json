@@ -1,10 +1,18 @@
 {
   "type": "src-n-attribute",
-  "media-query": "(max-width: 400px)",
+  "media-query": "(max-width: 800px)",
   "x-based-urls": [
     {
-      "url": "pic.jpg",
+      "url": "pic2.png",
+      "resolution": ".5x"
+    },
+    {
+      "url": "pic3.png",
       "resolution": "1x"
+    },
+    {
+      "url": "pic4.png",
+      "resolution": "2x"
     }
   ],
   "viewport-urls": null
