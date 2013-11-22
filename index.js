@@ -51,7 +51,6 @@ module.exports = (function(){
         "sizeurl": parse_sizeurl,
         "url": parse_url,
         "ident": parse_ident,
-        "comment": parse_comment,
         "num": parse_num,
         "integer": parse_integer,
         "float": parse_float,
@@ -65,7 +64,6 @@ module.exports = (function(){
         "CALC": parse_CALC,
         "EXPR": parse_EXPR,
         "OPERATOR": parse_OPERATOR,
-        "S": parse_S,
         "A": parse_A,
         "C": parse_C,
         "D": parse_D,
@@ -154,10 +152,10 @@ module.exports = (function(){
         result0 = result0 !== null ? result0 : "";
         if (result0 !== null) {
           result1 = [];
-          result2 = parse_S();
+          result2 = parse_s();
           while (result2 !== null) {
             result1.push(result2);
-            result2 = parse_S();
+            result2 = parse_s();
           }
           if (result1 !== null) {
             result2 = parse_urlset();
@@ -197,10 +195,10 @@ module.exports = (function(){
         pos0 = pos;
         pos1 = pos;
         result0 = [];
-        result1 = parse_S();
+        result1 = parse_s();
         while (result1 !== null) {
           result0.push(result1);
-          result1 = parse_S();
+          result1 = parse_s();
         }
         if (result0 !== null) {
           if (input.charCodeAt(pos) === 40) {
@@ -214,10 +212,10 @@ module.exports = (function(){
           }
           if (result1 !== null) {
             result2 = [];
-            result3 = parse_S();
+            result3 = parse_s();
             while (result3 !== null) {
               result2.push(result3);
-              result3 = parse_S();
+              result3 = parse_s();
             }
             if (result2 !== null) {
               result3 = parse_medium();
@@ -233,10 +231,10 @@ module.exports = (function(){
                 }
                 if (result4 !== null) {
                   result5 = [];
-                  result6 = parse_S();
+                  result6 = parse_s();
                   while (result6 !== null) {
                     result5.push(result6);
-                    result6 = parse_S();
+                    result6 = parse_s();
                   }
                   if (result5 !== null) {
                     result0 = [result0, result1, result2, result3, result4, result5];
@@ -284,10 +282,10 @@ module.exports = (function(){
         result0 = parse_IDENT();
         if (result0 !== null) {
           result1 = [];
-          result2 = parse_S();
+          result2 = parse_s();
           while (result2 !== null) {
             result1.push(result2);
-            result2 = parse_S();
+            result2 = parse_s();
           }
           if (result1 !== null) {
             if (input.charCodeAt(pos) === 58) {
@@ -301,19 +299,19 @@ module.exports = (function(){
             }
             if (result2 !== null) {
               result3 = [];
-              result4 = parse_S();
+              result4 = parse_s();
               while (result4 !== null) {
                 result3.push(result4);
-                result4 = parse_S();
+                result4 = parse_s();
               }
               if (result3 !== null) {
                 result4 = parse_DIMENSION();
                 if (result4 !== null) {
                   result5 = [];
-                  result6 = parse_S();
+                  result6 = parse_s();
                   while (result6 !== null) {
                     result5.push(result6);
-                    result6 = parse_S();
+                    result6 = parse_s();
                   }
                   if (result5 !== null) {
                     result0 = [result0, result1, result2, result3, result4, result5];
@@ -394,10 +392,10 @@ module.exports = (function(){
           }
           if (result2 !== null) {
             result3 = [];
-            result4 = parse_S();
+            result4 = parse_s();
             while (result4 !== null) {
               result3.push(result4);
-              result4 = parse_S();
+              result4 = parse_s();
             }
             if (result3 !== null) {
               result4 = parse_xurl();
@@ -429,10 +427,10 @@ module.exports = (function(){
             }
             if (result2 !== null) {
               result3 = [];
-              result4 = parse_S();
+              result4 = parse_s();
               while (result4 !== null) {
                 result3.push(result4);
-                result4 = parse_S();
+                result4 = parse_s();
               }
               if (result3 !== null) {
                 result4 = parse_xurl();
@@ -488,12 +486,12 @@ module.exports = (function(){
         result0 = parse_url();
         if (result0 !== null) {
           pos2 = pos;
-          result2 = parse_S();
+          result2 = parse_s();
           if (result2 !== null) {
             result1 = [];
             while (result2 !== null) {
               result1.push(result2);
-              result2 = parse_S();
+              result2 = parse_s();
             }
           } else {
             result1 = null;
@@ -544,10 +542,10 @@ module.exports = (function(){
         result0 = parse_viewportlist();
         if (result0 !== null) {
           result1 = [];
-          result2 = parse_S();
+          result2 = parse_s();
           while (result2 !== null) {
             result1.push(result2);
-            result2 = parse_S();
+            result2 = parse_s();
           }
           if (result1 !== null) {
             if (input.charCodeAt(pos) === 59) {
@@ -561,10 +559,10 @@ module.exports = (function(){
             }
             if (result2 !== null) {
               result3 = [];
-              result4 = parse_S();
+              result4 = parse_s();
               while (result4 !== null) {
                 result3.push(result4);
-                result4 = parse_S();
+                result4 = parse_s();
               }
               if (result3 !== null) {
                 result4 = parse_sizeurls();
@@ -617,10 +615,10 @@ module.exports = (function(){
           result1 = [];
           pos2 = pos;
           result2 = [];
-          result3 = parse_S();
+          result3 = parse_s();
           while (result3 !== null) {
             result2.push(result3);
-            result3 = parse_S();
+            result3 = parse_s();
           }
           if (result2 !== null) {
             if (input.charCodeAt(pos) === 40) {
@@ -646,10 +644,10 @@ module.exports = (function(){
                 }
                 if (result5 !== null) {
                   result6 = [];
-                  result7 = parse_S();
+                  result7 = parse_s();
                   while (result7 !== null) {
                     result6.push(result7);
-                    result7 = parse_S();
+                    result7 = parse_s();
                   }
                   if (result6 !== null) {
                     result7 = parse_imagesize();
@@ -686,10 +684,10 @@ module.exports = (function(){
             result1.push(result2);
             pos2 = pos;
             result2 = [];
-            result3 = parse_S();
+            result3 = parse_s();
             while (result3 !== null) {
               result2.push(result3);
-              result3 = parse_S();
+              result3 = parse_s();
             }
             if (result2 !== null) {
               if (input.charCodeAt(pos) === 40) {
@@ -715,10 +713,10 @@ module.exports = (function(){
                   }
                   if (result5 !== null) {
                     result6 = [];
-                    result7 = parse_S();
+                    result7 = parse_s();
                     while (result7 !== null) {
                       result6.push(result7);
-                      result7 = parse_S();
+                      result7 = parse_s();
                     }
                     if (result6 !== null) {
                       result7 = parse_imagesize();
@@ -825,10 +823,10 @@ module.exports = (function(){
           }
           if (result2 !== null) {
             result3 = [];
-            result4 = parse_S();
+            result4 = parse_s();
             while (result4 !== null) {
               result3.push(result4);
-              result4 = parse_S();
+              result4 = parse_s();
             }
             if (result3 !== null) {
               result4 = parse_sizeurl();
@@ -860,10 +858,10 @@ module.exports = (function(){
             }
             if (result2 !== null) {
               result3 = [];
-              result4 = parse_S();
+              result4 = parse_s();
               while (result4 !== null) {
                 result3.push(result4);
-                result4 = parse_S();
+                result4 = parse_s();
               }
               if (result3 !== null) {
                 result4 = parse_sizeurl();
@@ -916,10 +914,10 @@ module.exports = (function(){
         result0 = parse_url();
         if (result0 !== null) {
           result1 = [];
-          result2 = parse_S();
+          result2 = parse_s();
           while (result2 !== null) {
             result1.push(result2);
-            result2 = parse_S();
+            result2 = parse_s();
           }
           if (result1 !== null) {
             result2 = parse_integer();
@@ -1026,258 +1024,6 @@ module.exports = (function(){
           result0 = (function(offset, value) { return value.join(""); })(pos0, result0);
         }
         if (result0 === null) {
-          pos = pos0;
-        }
-        return result0;
-      }
-      
-      function parse_comment() {
-        var result0, result1, result2, result3, result4, result5, result6, result7;
-        var pos0, pos1;
-        
-        pos0 = pos;
-        if (input.substr(pos, 2) === "/*") {
-          result0 = "/*";
-          pos += 2;
-        } else {
-          result0 = null;
-          if (reportFailures === 0) {
-            matchFailed("\"/*\"");
-          }
-        }
-        if (result0 !== null) {
-          result1 = [];
-          if (/^[^*]/.test(input.charAt(pos))) {
-            result2 = input.charAt(pos);
-            pos++;
-          } else {
-            result2 = null;
-            if (reportFailures === 0) {
-              matchFailed("[^*]");
-            }
-          }
-          while (result2 !== null) {
-            result1.push(result2);
-            if (/^[^*]/.test(input.charAt(pos))) {
-              result2 = input.charAt(pos);
-              pos++;
-            } else {
-              result2 = null;
-              if (reportFailures === 0) {
-                matchFailed("[^*]");
-              }
-            }
-          }
-          if (result1 !== null) {
-            if (input.charCodeAt(pos) === 42) {
-              result3 = "*";
-              pos++;
-            } else {
-              result3 = null;
-              if (reportFailures === 0) {
-                matchFailed("\"*\"");
-              }
-            }
-            if (result3 !== null) {
-              result2 = [];
-              while (result3 !== null) {
-                result2.push(result3);
-                if (input.charCodeAt(pos) === 42) {
-                  result3 = "*";
-                  pos++;
-                } else {
-                  result3 = null;
-                  if (reportFailures === 0) {
-                    matchFailed("\"*\"");
-                  }
-                }
-              }
-            } else {
-              result2 = null;
-            }
-            if (result2 !== null) {
-              result3 = [];
-              pos1 = pos;
-              if (/^[^\/*]/.test(input.charAt(pos))) {
-                result4 = input.charAt(pos);
-                pos++;
-              } else {
-                result4 = null;
-                if (reportFailures === 0) {
-                  matchFailed("[^\\/*]");
-                }
-              }
-              if (result4 !== null) {
-                result5 = [];
-                if (/^[^*]/.test(input.charAt(pos))) {
-                  result6 = input.charAt(pos);
-                  pos++;
-                } else {
-                  result6 = null;
-                  if (reportFailures === 0) {
-                    matchFailed("[^*]");
-                  }
-                }
-                while (result6 !== null) {
-                  result5.push(result6);
-                  if (/^[^*]/.test(input.charAt(pos))) {
-                    result6 = input.charAt(pos);
-                    pos++;
-                  } else {
-                    result6 = null;
-                    if (reportFailures === 0) {
-                      matchFailed("[^*]");
-                    }
-                  }
-                }
-                if (result5 !== null) {
-                  if (input.charCodeAt(pos) === 42) {
-                    result7 = "*";
-                    pos++;
-                  } else {
-                    result7 = null;
-                    if (reportFailures === 0) {
-                      matchFailed("\"*\"");
-                    }
-                  }
-                  if (result7 !== null) {
-                    result6 = [];
-                    while (result7 !== null) {
-                      result6.push(result7);
-                      if (input.charCodeAt(pos) === 42) {
-                        result7 = "*";
-                        pos++;
-                      } else {
-                        result7 = null;
-                        if (reportFailures === 0) {
-                          matchFailed("\"*\"");
-                        }
-                      }
-                    }
-                  } else {
-                    result6 = null;
-                  }
-                  if (result6 !== null) {
-                    result4 = [result4, result5, result6];
-                  } else {
-                    result4 = null;
-                    pos = pos1;
-                  }
-                } else {
-                  result4 = null;
-                  pos = pos1;
-                }
-              } else {
-                result4 = null;
-                pos = pos1;
-              }
-              while (result4 !== null) {
-                result3.push(result4);
-                pos1 = pos;
-                if (/^[^\/*]/.test(input.charAt(pos))) {
-                  result4 = input.charAt(pos);
-                  pos++;
-                } else {
-                  result4 = null;
-                  if (reportFailures === 0) {
-                    matchFailed("[^\\/*]");
-                  }
-                }
-                if (result4 !== null) {
-                  result5 = [];
-                  if (/^[^*]/.test(input.charAt(pos))) {
-                    result6 = input.charAt(pos);
-                    pos++;
-                  } else {
-                    result6 = null;
-                    if (reportFailures === 0) {
-                      matchFailed("[^*]");
-                    }
-                  }
-                  while (result6 !== null) {
-                    result5.push(result6);
-                    if (/^[^*]/.test(input.charAt(pos))) {
-                      result6 = input.charAt(pos);
-                      pos++;
-                    } else {
-                      result6 = null;
-                      if (reportFailures === 0) {
-                        matchFailed("[^*]");
-                      }
-                    }
-                  }
-                  if (result5 !== null) {
-                    if (input.charCodeAt(pos) === 42) {
-                      result7 = "*";
-                      pos++;
-                    } else {
-                      result7 = null;
-                      if (reportFailures === 0) {
-                        matchFailed("\"*\"");
-                      }
-                    }
-                    if (result7 !== null) {
-                      result6 = [];
-                      while (result7 !== null) {
-                        result6.push(result7);
-                        if (input.charCodeAt(pos) === 42) {
-                          result7 = "*";
-                          pos++;
-                        } else {
-                          result7 = null;
-                          if (reportFailures === 0) {
-                            matchFailed("\"*\"");
-                          }
-                        }
-                      }
-                    } else {
-                      result6 = null;
-                    }
-                    if (result6 !== null) {
-                      result4 = [result4, result5, result6];
-                    } else {
-                      result4 = null;
-                      pos = pos1;
-                    }
-                  } else {
-                    result4 = null;
-                    pos = pos1;
-                  }
-                } else {
-                  result4 = null;
-                  pos = pos1;
-                }
-              }
-              if (result3 !== null) {
-                if (input.charCodeAt(pos) === 47) {
-                  result4 = "/";
-                  pos++;
-                } else {
-                  result4 = null;
-                  if (reportFailures === 0) {
-                    matchFailed("\"/\"");
-                  }
-                }
-                if (result4 !== null) {
-                  result0 = [result0, result1, result2, result3, result4];
-                } else {
-                  result0 = null;
-                  pos = pos0;
-                }
-              } else {
-                result0 = null;
-                pos = pos0;
-              }
-            } else {
-              result0 = null;
-              pos = pos0;
-            }
-          } else {
-            result0 = null;
-            pos = pos0;
-          }
-        } else {
-          result0 = null;
           pos = pos0;
         }
         return result0;
@@ -1409,32 +1155,14 @@ module.exports = (function(){
       }
       
       function parse_IDENT() {
-        var result0, result1;
-        var pos0, pos1;
+        var result0;
+        var pos0;
         
         reportFailures++;
         pos0 = pos;
-        pos1 = pos;
-        result0 = [];
-        result1 = parse_comment();
-        while (result1 !== null) {
-          result0.push(result1);
-          result1 = parse_comment();
-        }
+        result0 = parse_ident();
         if (result0 !== null) {
-          result1 = parse_ident();
-          if (result1 !== null) {
-            result0 = [result0, result1];
-          } else {
-            result0 = null;
-            pos = pos1;
-          }
-        } else {
-          result0 = null;
-          pos = pos1;
-        }
-        if (result0 !== null) {
-          result0 = (function(offset, ident) { return ident; })(pos0, result0[1]);
+          result0 = (function(offset, ident) { return ident; })(pos0, result0);
         }
         if (result0 === null) {
           pos = pos0;
@@ -1447,28 +1175,17 @@ module.exports = (function(){
       }
       
       function parse_DIMENSION() {
-        var result0, result1, result2;
+        var result0, result1;
         var pos0, pos1;
         
         reportFailures++;
         pos0 = pos;
         pos1 = pos;
-        result0 = [];
-        result1 = parse_comment();
-        while (result1 !== null) {
-          result0.push(result1);
-          result1 = parse_comment();
-        }
+        result0 = parse_NUMBER();
         if (result0 !== null) {
-          result1 = parse_NUMBER();
+          result1 = parse_IDENT();
           if (result1 !== null) {
-            result2 = parse_IDENT();
-            if (result2 !== null) {
-              result0 = [result0, result1, result2];
-            } else {
-              result0 = null;
-              pos = pos1;
-            }
+            result0 = [result0, result1];
           } else {
             result0 = null;
             pos = pos1;
@@ -1483,7 +1200,7 @@ module.exports = (function(){
               unit: unit,
               value: num
             }
-          })(pos0, result0[1], result0[2]);
+          })(pos0, result0[0], result0[1]);
         }
         if (result0 === null) {
           pos = pos0;
@@ -1496,32 +1213,14 @@ module.exports = (function(){
       }
       
       function parse_NUMBER() {
-        var result0, result1;
-        var pos0, pos1;
+        var result0;
+        var pos0;
         
         reportFailures++;
         pos0 = pos;
-        pos1 = pos;
-        result0 = [];
-        result1 = parse_comment();
-        while (result1 !== null) {
-          result0.push(result1);
-          result1 = parse_comment();
-        }
+        result0 = parse_num();
         if (result0 !== null) {
-          result1 = parse_num();
-          if (result1 !== null) {
-            result0 = [result0, result1];
-          } else {
-            result0 = null;
-            pos = pos1;
-          }
-        } else {
-          result0 = null;
-          pos = pos1;
-        }
-        if (result0 !== null) {
-          result0 = (function(offset, num) { return num; })(pos0, result0[1]);
+          result0 = (function(offset, num) { return num; })(pos0, result0);
         }
         if (result0 === null) {
           pos = pos0;
@@ -1534,40 +1233,22 @@ module.exports = (function(){
       }
       
       function parse_PERCENTAGE() {
-        var result0, result1, result2;
-        var pos0, pos1, pos2;
+        var result0, result1;
+        var pos0, pos1;
         
         reportFailures++;
         pos0 = pos;
         pos1 = pos;
-        result0 = [];
-        result1 = parse_comment();
-        while (result1 !== null) {
-          result0.push(result1);
-          result1 = parse_comment();
-        }
+        result0 = parse_NUMBER();
         if (result0 !== null) {
-          pos2 = pos;
-          result1 = parse_NUMBER();
-          if (result1 !== null) {
-            if (input.charCodeAt(pos) === 37) {
-              result2 = "%";
-              pos++;
-            } else {
-              result2 = null;
-              if (reportFailures === 0) {
-                matchFailed("\"%\"");
-              }
-            }
-            if (result2 !== null) {
-              result1 = [result1, result2];
-            } else {
-              result1 = null;
-              pos = pos2;
-            }
+          if (input.charCodeAt(pos) === 37) {
+            result1 = "%";
+            pos++;
           } else {
             result1 = null;
-            pos = pos2;
+            if (reportFailures === 0) {
+              matchFailed("\"%\"");
+            }
           }
           if (result1 !== null) {
             result0 = [result0, result1];
@@ -1580,7 +1261,7 @@ module.exports = (function(){
           pos = pos1;
         }
         if (result0 !== null) {
-          result0 = (function(offset, parts) { return parts.join(""); })(pos0, result0[1]);
+          result0 = (function(offset, parts) { return parts.join(""); })(pos0, result0);
         }
         if (result0 === null) {
           pos = pos0;
@@ -1812,10 +1493,10 @@ module.exports = (function(){
         pos0 = pos;
         pos1 = pos;
         result0 = [];
-        result1 = parse_S();
+        result1 = parse_s();
         while (result1 !== null) {
           result0.push(result1);
-          result1 = parse_S();
+          result1 = parse_s();
         }
         if (result0 !== null) {
           if (/^[^)]/.test(input.charAt(pos))) {
@@ -1846,10 +1527,10 @@ module.exports = (function(){
           }
           if (result1 !== null) {
             result2 = [];
-            result3 = parse_S();
+            result3 = parse_s();
             while (result3 !== null) {
               result2.push(result3);
-              result3 = parse_S();
+              result3 = parse_s();
             }
             if (result2 !== null) {
               result0 = [result0, result1, result2];
@@ -1885,37 +1566,6 @@ module.exports = (function(){
           if (reportFailures === 0) {
             matchFailed("[+\\-*\\/]");
           }
-        }
-        return result0;
-      }
-      
-      function parse_S() {
-        var result0, result1;
-        var pos0;
-        
-        reportFailures++;
-        pos0 = pos;
-        result0 = [];
-        result1 = parse_comment();
-        while (result1 !== null) {
-          result0.push(result1);
-          result1 = parse_comment();
-        }
-        if (result0 !== null) {
-          result1 = parse_s();
-          if (result1 !== null) {
-            result0 = [result0, result1];
-          } else {
-            result0 = null;
-            pos = pos0;
-          }
-        } else {
-          result0 = null;
-          pos = pos0;
-        }
-        reportFailures--;
-        if (reportFailures === 0 && result0 === null) {
-          matchFailed("whitespace");
         }
         return result0;
       }

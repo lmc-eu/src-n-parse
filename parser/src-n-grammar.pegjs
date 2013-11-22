@@ -100,9 +100,6 @@ url
 ident
   = value:[A-Za-z0-9\-]+ { return value.join(""); }
 
-comment
-  = "/*" [^*]* "*"+ ([^/*] [^*]* "*"+)* "/"
-
 num
   = float
   / integer
@@ -117,10 +114,10 @@ s
   = [ \t\r\n\f]+
 
 IDENT "identifier"
-  = comment* ident:ident { return ident; }
+  = ident:ident { return ident; }
 
 DIMENSION "dimension"
-  = comment* num:NUMBER unit:IDENT {
+  = num:NUMBER unit:IDENT {
     return {
       unit: unit,
       value: num
@@ -128,10 +125,10 @@ DIMENSION "dimension"
   }
 
 NUMBER "number"
-  = comment* num:num { return num; }
+  = num:num { return num; }
 
 PERCENTAGE "percentage"
-  = comment* parts:(NUMBER "%") { return parts.join(""); }
+  = parts:(NUMBER "%") { return parts.join(""); }
 
 RESOLUTION "resolution"
   = num:NUMBER resolution:RESOLUTION_UNIT {
@@ -159,7 +156,7 @@ OPERATOR
  = [+\-*/]
 
 S "whitespace"
-  = comment* s
+  = s
 
 A = [Aa]
 C = [Cc]
