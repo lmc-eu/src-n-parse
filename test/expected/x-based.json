@@ -1,19 +1,36 @@
 {
   "type": "src-n-attribute",
-  "media-query": "(max-width: 800px)",
-  "x-based-urls": [
-    {
-      "url": "pic2.png",
-      "resolution": ".5x"
-    },
-    {
-      "url": "pic3.png",
-      "resolution": "1x"
-    },
-    {
-      "url": "pic4.png",
-      "resolution": "2x"
+  "media-query": {
+    "feature": "max-width",
+    "dimension": {
+      "unit": "px",
+      "value": 800
     }
-  ],
-  "viewport-urls": null
+  },
+  "urls": {
+    "type": "x-based-urls",
+    "urls": [
+      {
+        "url": "pic2.png",
+        "resolution": {
+          "unit": "x",
+          "value": 0.5
+        }
+      },
+      {
+        "url": "pic3.png",
+        "resolution": {
+          "unit": "x",
+          "value": 1
+        }
+      },
+      {
+        "url": "pic4.png",
+        "resolution": {
+          "unit": "x",
+          "value": 2
+        }
+      }
+    ]
+  }
 }

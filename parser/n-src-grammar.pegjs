@@ -4,7 +4,8 @@ start
 attr
   = media:media? S* urlset:urlset {
     return {
-     media: media,
+     type: "src-n-attribute",
+     "media-query": media ? media : null,
      urls: urlset
     }
   }
@@ -30,7 +31,10 @@ xurlset = head:xurl tail:("," S* xurl)* {
       for (var i = 0; i < tail.length; i++) {
         result.push(tail[i][2]);
       }
-      return { type: "xurlset", urls: result };
+      return {
+        type: "x-based-urls",
+        urls: result
+      };
     }
 
 xurl
@@ -43,18 +47,24 @@ xurl
 
 vurlset = vplist:viewportlist S* ";" S* sizeurls:sizeurls {
   return {
-    type: "vurlset",
-    viewportlist: vplist,
-    sizeurls: sizeurls
+    type: "viewport-urls",
+    "size-viewport-list": vplist,
+    "size-based-urls": sizeurls
   }
 
 }
 
-viewportlist = head:imagesize tail:(S* "(" DIMENSION ")" S* imagesize)* {
-      var result = [head];
+viewportlist = head:imagesize tail:(S* "(" DIMENSION ")" S* (imagesize / CALC ))* {
+      var result = [{
+        "image-size": head
+      }];
+      var last = 0;
       for (var i = 0; i < tail.length; i++) {
-        result.push(tail[i][2]);
-        result.push(tail[i][5]);
+        result[last]["viewport-size"] = tail[i][2];
+        result.push({
+          "image-size": tail[i][5]
+        });
+        last++;
       }
       return result;
     }
@@ -129,12 +139,30 @@ RESOLUTION "resolution"
 RESOLUTION_UNIT "resolution unit"
   = (D P I / D P C M / D P P X / X)
 
+CALC "calc expression"
+ = C A L C "(" expr:EXPR ")" {
+   return {
+     type: "calc-expression",
+     expression: expr
+   }
+ }
+
+EXPR
+ = S* parts:([^)]+) S* { return parts.join(""); }
+
+
+OPERATOR
+ = [+\-*/]
+
+
 S "whitespace"
   = comment* s
 
+A = [Aa]
 C = [Cc]
 D = [Dd]
 I = [Ii]
+L = [Ll]
 M = [Mm]
 P = [Pp]
 X = [Xx]

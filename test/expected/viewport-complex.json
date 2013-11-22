@@ -1,45 +1,54 @@
 {
   "type": "src-n-attribute",
   "media-query": null,
-  "x-based-urls": null,
-  "viewport-urls": {
+  "urls": {
+    "type": "viewport-urls",
     "size-viewport-list": [
       {
         "image-size": "100%",
-        "viewport-size": "30em"
+        "viewport-size": {
+          "unit": "em",
+          "value": 30
+        }
       },
       {
         "image-size": "50%",
-        "viewport-size": "50em"
+        "viewport-size": {
+          "unit": "em",
+          "value": 50
+        }
       },
       {
-        "image-size": "calc(33% - 100px)"
+        "image-size": {
+          "type": "calc-expression",
+          "expression": "33% - 100px"
+        }
       }
     ],
     "size-based-urls": [
       {
         "url": "pic100.png",
-        "size": "100"
+        "size": 100
       },
       {
         "url": "pic200.png",
-        "size": "200"
+        "size": 200
       },
       {
         "url": "pic400.png",
-        "size": "400"
+        "size": 400
       },
       {
         "url": "pic800.png",
-        "size": "800"
+        "size": 800
       },
       {
         "url": "pic1600.png",
-        "size": "1600"
+        "size": 1600
       },
       {
         "url": "pic3200.png",
-        "size": "3200"
+        "size": 3200
       }
     ]
   }

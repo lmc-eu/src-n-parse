@@ -1,12 +1,15 @@
 {
   "type": "src-n-attribute",
   "media-query": null,
-  "x-based-urls": null,
-  "viewport-urls": {
+  "urls": {
+    "type": "viewport-urls",
     "size-viewport-list": [
       {
         "image-size": "100%",
-        "viewport-size": "40em"
+        "viewport-size": {
+          "unit": "em",
+          "value": 40
+        }
       },
       {
         "image-size": "50%"
@@ -15,7 +18,7 @@
     "size-based-urls": [
       {
         "url": "pic.jpg",
-        "size": "1200"
+        "size": 1200
       }
     ]
   }
