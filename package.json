@@ -19,7 +19,9 @@
   "devDependencies": {
     "mocha": "*",
     "should": "*",
-    "pegjs": "~0.7.0"
+    "pegjs": "~0.7.0",
+    "grunt": "~0.4.2",
+    "grunt-peg": "~1.0.0"
   },
   "author": "Robin Pokorný <robin@medvedi.eu>",
   "license": "MIT",
