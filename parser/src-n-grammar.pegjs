@@ -26,16 +26,17 @@ medium
 urlset
   = urlset:(vurlset / xurlset) { return urlset; }
 
-xurlset = head:xurl tail:("," S* xurl)* {
-      var result = [head];
-      for (var i = 0; i < tail.length; i++) {
-        result.push(tail[i][2]);
-      }
-      return {
-        type: "x-based-urls",
-        urls: result
-      };
+xurlset
+  = head:xurl tail:("," S* xurl)* {
+    var result = [head];
+    for (var i = 0; i < tail.length; i++) {
+    result.push(tail[i][2]);
     }
+    return {
+    type: "x-based-urls",
+    urls: result
+    };
+  }
 
 xurl
   = url:url resolution:(S+ RESOLUTION)? {
@@ -45,7 +46,8 @@ xurl
     }
   }
 
-vurlset = vplist:viewportlist S* ";" S* sizeurls:sizeurls {
+vurlset
+  = vplist:viewportlist S* ";" S* sizeurls:sizeurls {
   return {
     type: "viewport-urls",
     "size-viewport-list": vplist,
@@ -54,35 +56,38 @@ vurlset = vplist:viewportlist S* ";" S* sizeurls:sizeurls {
 
 }
 
-viewportlist = head:imagesize tail:(S* "(" DIMENSION ")" S* (imagesize / CALC ))* {
-      var result = [{
-        "image-size": head
-      }];
-      var last = 0;
-      for (var i = 0; i < tail.length; i++) {
-        result[last]["viewport-size"] = tail[i][2];
-        result.push({
-          "image-size": tail[i][5]
-        });
-        last++;
-      }
-      return result;
+viewportlist
+  = head:imagesize tail:(S* "(" DIMENSION ")" S* (imagesize / CALC ))* {
+    var result = [{
+      "image-size": head
+    }];
+    var last = 0;
+    for (var i = 0; i < tail.length; i++) {
+      result[last]["viewport-size"] = tail[i][2];
+      result.push({
+        "image-size": tail[i][5]
+      });
+      last++;
     }
+    return result;
+  }
 
 imagesize
   = size:(PERCENTAGE / DIMENSION) {
     return size;
   }
 
-sizeurls = head:sizeurl tail:("," S* sizeurl)* {
-      var result = [head];
-      for (var i = 0; i < tail.length; i++) {
-        result.push(tail[i][2]);
-      }
-      return result;
+sizeurls
+  = head:sizeurl tail:("," S* sizeurl)* {
+    var result = [head];
+    for (var i = 0; i < tail.length; i++) {
+      result.push(tail[i][2]);
     }
+    return result;
+  }
 
-sizeurl = url:url S* size:integer {
+sizeurl
+  = url:url S* size:integer {
     return {
       url: url,
       size: size
@@ -150,10 +155,8 @@ CALC "calc expression"
 EXPR
  = S* parts:([^)]+) S* { return parts.join(""); }
 
-
 OPERATOR
  = [+\-*/]
-
 
 S "whitespace"
   = comment* s

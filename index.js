@@ -463,15 +463,15 @@ module.exports = (function(){
         }
         if (result0 !== null) {
           result0 = (function(offset, head, tail) {
-              var result = [head];
-              for (var i = 0; i < tail.length; i++) {
-                result.push(tail[i][2]);
-              }
-              return {
-                type: "x-based-urls",
-                urls: result
-              };
-            })(pos0, result0[0], result0[1]);
+            var result = [head];
+            for (var i = 0; i < tail.length; i++) {
+            result.push(tail[i][2]);
+            }
+            return {
+            type: "x-based-urls",
+            urls: result
+            };
+          })(pos0, result0[0], result0[1]);
         }
         if (result0 === null) {
           pos = pos0;
@@ -764,19 +764,19 @@ module.exports = (function(){
         }
         if (result0 !== null) {
           result0 = (function(offset, head, tail) {
-              var result = [{
-                "image-size": head
-              }];
-              var last = 0;
-              for (var i = 0; i < tail.length; i++) {
-                result[last]["viewport-size"] = tail[i][2];
-                result.push({
-                  "image-size": tail[i][5]
-                });
-                last++;
-              }
-              return result;
-            })(pos0, result0[0], result0[1]);
+            var result = [{
+              "image-size": head
+            }];
+            var last = 0;
+            for (var i = 0; i < tail.length; i++) {
+              result[last]["viewport-size"] = tail[i][2];
+              result.push({
+                "image-size": tail[i][5]
+              });
+              last++;
+            }
+            return result;
+          })(pos0, result0[0], result0[1]);
         }
         if (result0 === null) {
           pos = pos0;
@@ -894,12 +894,12 @@ module.exports = (function(){
         }
         if (result0 !== null) {
           result0 = (function(offset, head, tail) {
-              var result = [head];
-              for (var i = 0; i < tail.length; i++) {
-                result.push(tail[i][2]);
-              }
-              return result;
-            })(pos0, result0[0], result0[1]);
+            var result = [head];
+            for (var i = 0; i < tail.length; i++) {
+              result.push(tail[i][2]);
+            }
+            return result;
+          })(pos0, result0[0], result0[1]);
         }
         if (result0 === null) {
           pos = pos0;
