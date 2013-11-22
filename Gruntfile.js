@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     peg: {
       parser: {
         src: "parser/src-n-grammar.pegjs",
-        dest: "parser/src-n-parser.js"
+        dest: "index.js"
       }
     }
   });
