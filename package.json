@@ -1,6 +1,6 @@
 {
   "name": "src-n-parse",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Parse src-n-attribute",
   "main": "index",
   "scripts": {
@@ -24,7 +24,10 @@
     "grunt-peg": "~1.0.0",
     "grunt-contrib-watch": "~0.5.3"
   },
-  "author": "Robin Pokorný <robin@medvedi.eu>",
+  "contributors": [
+    "Robin Pokorný <robin@medvedi.eu>",
+    "Vojtěch Vondra <mail@vojtechvondra.cz>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/robinpokorny/src-n-parse/issues"

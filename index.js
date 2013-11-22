@@ -1,4 +1,4 @@
-var parser = require("./parser/n-src-parser");
+var parser = require("./parser/src-n-parser");
 
 module.exports = function (value) {
   'use strict';

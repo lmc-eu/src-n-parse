@@ -1,14 +1,14 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    watch: {
+      files: ['parser/src-n-grammar.pegjs'],
+      tasks: ['peg:parser']
+    },
     peg: {
       parser: {
-        src: "parser/n-src-grammar.pegjs",
-        dest: "parser/n-src-parser.js"
+        src: "parser/src-n-grammar.pegjs",
+        dest: "parser/src-n-parser.js"
       }
-    },
-    watch: {
-      files: ['parser/n-src-grammar.pegjs'],
-      tasks: ['peg:parser']
     }
   });
 
