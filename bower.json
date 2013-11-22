@@ -1,0 +1,18 @@
+{
+  "name": "src-n-parse",
+  "main": "index.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/robinpokorny/src-n-parse",
+  "description": "Parse src-n-attribute",
+  "keywords": [
+    "src-n",
+    "parser",
+    "responsive",
+    "image"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "test",
+  ]
+}
