@@ -95,7 +95,7 @@ sizeurl
   }
 
 url
-  = value:[A-Za-z0-9\-\./]+ { return value.join(""); }
+  = value:[A-Za-z0-9\-\./:_%#~?&=]+ { return value.join(""); }
 
 ident
   = value:[A-Za-z0-9\-]+ { return value.join(""); }
