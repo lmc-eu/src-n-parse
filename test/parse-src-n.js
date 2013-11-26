@@ -7,7 +7,7 @@ describe('parse(srt)', function(){
   [
     {
         'name': 'x-based',
-        'value': '(max-width: 800px) pic2.png .5x, pic3.png 1x, pic4.png 2x'
+        'value': '(max-width: 800px) pic2.png .5x, pic3.png 1x, http://www.example.com/pic.js?id=4&format=png 2x'
     },
     {
         'name': 'viewport',

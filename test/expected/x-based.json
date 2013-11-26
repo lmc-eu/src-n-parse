@@ -25,7 +25,7 @@
         }
       },
       {
-        "url": "pic4.png",
+        "url": "http://www.example.com/pic.js?id=4&format=png",
         "resolution": {
           "unit": "x",
           "value": 2
