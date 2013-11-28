@@ -1,14 +1,15 @@
 {
   "name": "src-n-parse",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Parse src-n-attribute",
   "main": "index",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "grunt"    
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/robinpokorny/src-n-parse.git"
+    "url": "git://github.com/lmc-eu/src-n-parse.git"
   },
   "keywords": [
     "src-n",
@@ -30,7 +31,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/robinpokorny/src-n-parse/issues"
+    "url": "https://github.com/lmc-eu/src-n-parse/issues"
   },
-  "homepage": "https://github.com/robinpokorny/src-n-parse"
+  "homepage": "https://github.com/lmc-eu/src-n-parse"
 }
