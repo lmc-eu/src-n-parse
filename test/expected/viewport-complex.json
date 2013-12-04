@@ -5,14 +5,20 @@
     "type": "viewport-urls",
     "size-viewport-list": [
       {
-        "image-size": "100%",
+        "image-size": {
+          "unit": "%",
+          "value": 100
+        },
         "viewport-size": {
           "unit": "em",
           "value": 30
         }
       },
       {
-        "image-size": "50%",
+        "image-size": {
+          "unit": "%",
+          "value": 50
+        },
         "viewport-size": {
           "unit": "em",
           "value": 50

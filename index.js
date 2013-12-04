@@ -1261,7 +1261,12 @@ module.exports = (function(){
           pos = pos1;
         }
         if (result0 !== null) {
-          result0 = (function(offset, parts) { return parts.join(""); })(pos0, result0);
+          result0 = (function(offset, parts) {
+            return {
+              unit: parts[1],
+              value: parts[0]
+            }
+          })(pos0, result0);
         }
         if (result0 === null) {
           pos = pos0;

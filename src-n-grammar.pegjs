@@ -128,7 +128,12 @@ NUMBER "number"
   = num:num { return num; }
 
 PERCENTAGE "percentage"
-  = parts:(NUMBER "%") { return parts.join(""); }
+  = parts:(NUMBER "%") {
+    return {
+      unit: parts[1],
+      value: parts[0]
+    }
+  }
 
 RESOLUTION "resolution"
   = num:NUMBER resolution:RESOLUTION_UNIT {

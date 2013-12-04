@@ -24,7 +24,7 @@ describe('parse(srt)', function(){
       var json = read(path.join('test', 'expected', test.name + '.json'), 'utf8');
       var ret = srcnparser.parse(test.value);
       ret = JSON.stringify(ret, null, 2);
-      ret.should.equal(json.replace(/\r/gm, ''));
+      ret.should.equal(json.replace(/\r/gm, '').trim());
     })
   });
 })
