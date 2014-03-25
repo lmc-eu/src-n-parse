@@ -1,0 +1,29 @@
+{
+  "type": "src-n-attribute",
+  "media-query": {
+    "feature": "max-width",
+    "dimension": {
+      "unit": "px",
+      "value": 500
+    }
+  },
+  "urls": {
+    "type": "x-based-urls",
+    "urls": [
+      {
+        "url": "příklad.jpg",
+        "resolution": {
+          "unit": "x",
+          "value": 0.5
+        }
+      },
+      {
+        "url": "p%C5%99%C3%ADklad.jpg",
+        "resolution": {
+          "unit": "x",
+          "value": 1
+        }
+      }
+    ]
+  }
+}

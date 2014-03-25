@@ -14,6 +14,10 @@ describe('parse(srt)', function(){
         'value': '100% (40em) 50%; pic.jpg 1200'
     },
     {
+        'name': 'diacritics',
+        'value': '(max-width: 500px) příklad.jpg .5x, p%C5%99%C3%ADklad.jpg 1x'
+    },
+    {
         'name': 'viewport-complex',
         'value': '100% (30em) 50% (50em) calc(33% - 100px); pic100.png 100, pic200.png 200, pic400.png 400, pic800.png 800, pic1600.png 1600, pic3200.png 3200'
     }
