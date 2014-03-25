@@ -1,6 +1,8 @@
 src-n-parse
 ===========
 
+[![Build Status](https://travis-ci.org/lmc-eu/src-n-parse.svg?branch=master)](https://travis-ci.org/lmc-eu/src-n-parse)
+
 JavaScript src-N parser
 
 Based on [Proposal for RespImg Syntax](https://github.com/tabatkins/specs/blob/5e71e347a03ead903551cf736bc8235f66196b94/respimg/) by [Tab Atkins](https://github.com/tabatkins).
