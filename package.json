@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/lmc-eu/src-n-parse/issues"
   },
-  "homepage": "https://github.com/lmc-eu/src-n-parse"
+  "homepage": "https://github.com/lmc-eu/src-n-parse",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  }
 }
