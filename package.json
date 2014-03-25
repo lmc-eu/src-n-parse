@@ -1,6 +1,6 @@
 {
   "name": "src-n-parse",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Parse src-n-attribute",
   "main": "index",
   "scripts": {
